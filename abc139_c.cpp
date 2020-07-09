@@ -24,6 +24,6 @@ int main() {
         }
     }
 
-    cout << cnt << endl;
+    cout << maxcnt << endl;
     return 0;
 }
