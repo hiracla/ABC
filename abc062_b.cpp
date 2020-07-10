@@ -14,15 +14,22 @@ int main() {
     }
 
     vector<vector<char>> a(h+2, vector<char>(w+2));
-    cout << endl;
-    rep(i,h){
-        rep(j,w) {
-            if (i==0 || i==h+1) a.at(i).at(j)='#';
-            if (j==0 || j==w+1) a.at(i).at(j)='#';
-            a.at(i+1).at(j+1)=s[i].at(j);
+    rep(i,h+2) {
+        rep(j,w+2) {
+            a.at(i).at(j)='#';
+        }
+    }
+    for(int i=1; i<h+1; i++){
+        for(int j=1; j<w+1; j++){
+            a.at(i).at(j)=s[i-1].at(j-1);
+         }
+    }
+
+    rep(i,a.size()) {
+        rep(j,a.at(0).size()) {
+            cout << a.at(i).at(j);
         }
         cout << endl;
     }
-
     return 0;
 }
