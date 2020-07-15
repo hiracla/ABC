@@ -35,8 +35,8 @@ int main() {
     }
     cout << endl;
     int minElement = *min_element(rate.begin(), rate.end(), [](int a, int b) {
-        if (a>0 && b==0) return true;
-        else return false;
+        if (a==0) return false;
+        else if (b==0) return true;
     });
     int maxElement = *max_element(rate.begin(), rate.end());
     
